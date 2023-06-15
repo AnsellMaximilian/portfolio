@@ -1,3 +1,16 @@
+import { PortableTextBlock } from "sanity";
+
+export type Project = {
+  _id: string;
+  image: string;
+  name: string;
+  liveUrl: string;
+  videoUrl: string;
+  slug: string;
+  content: PortableTextBlock[];
+  description: string;
+};
+
 const project = {
   name: "project",
   title: "Projects",
@@ -42,6 +55,17 @@ const project = {
       title: "Content",
       type: "array",
       of: [{ type: "block" }],
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+    {
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
+      initialValue: false,
     },
     {
       name: "technologies",
