@@ -1,9 +1,9 @@
 import { fetchProjects } from "@/sanity/services";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
   const projects = await fetchProjects();
-  const projectss = [...projects, ...projects, ...projects];
   return (
     <div>
       <div className="text-white bg-gradient-to-b from-[#121212] to-[#3d3d3d] pt-24">
@@ -26,9 +26,10 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-semibold text-center">Projects</h2>
           <div className="mt-8 grid grid-cols-12 gap-8">
-            {projectss.map((project) => {
+            {projects.map((project) => {
               return (
-                <div
+                <Link
+                  href={`/projects/${project.slug}`}
                   key={project._id}
                   className="col-span-12 lg:col-span-6 xl:col-span-4 overflow-hidden rounded shadow-md hover:scale-105 transition-all duration-100"
                 >
@@ -36,11 +37,11 @@ export default async function Home() {
                   <Image
                     src={project.image}
                     alt={project.name}
-                    width={800}
-                    height={210}
+                    width={1920}
+                    height={1080}
                     className="w-full"
                   />
-                </div>
+                </Link>
               );
             })}
           </div>

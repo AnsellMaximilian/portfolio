@@ -4,8 +4,10 @@ export type Project = {
   _id: string;
   image: string;
   name: string;
-  liveUrl: string;
-  videoUrl: string;
+  liveUrl?: string;
+  articleUrl?: string;
+  repoUrl?: string;
+  videoUrl?: string;
   slug: string;
   content: PortableTextBlock[];
   description: string;
@@ -46,8 +48,18 @@ const project = {
       type: "url",
     },
     {
+      name: "repoUrl",
+      title: "Repo URL",
+      type: "url",
+    },
+    {
       name: "videoUrl",
       title: "Video URL",
+      type: "url",
+    },
+    {
+      name: "articleUrl",
+      title: "Article URL",
       type: "url",
     },
     {

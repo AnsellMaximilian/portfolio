@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
+import Link from "next/link";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -19,7 +20,14 @@ export default function RootLayout({
       <body className={mont.className}>
         <header className="h-24 fixed inset-x-0 text-white text-xl py-8 px-4 bg-[#121212]">
           <nav className="h-full flex items-center justify-between">
-            <Image src="/logo.svg" alt="Personal Logo" width={64} height={64} />
+            <Link href="/">
+              <Image
+                src="/logo.svg"
+                alt="Personal Logo"
+                width={64}
+                height={64}
+              />
+            </Link>
             <ul className="flex gap-4">
               <li>About</li>
               <li>Projects</li>
