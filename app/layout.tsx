@@ -28,7 +28,7 @@ export default function RootLayout({
                 height={64}
               />
             </Link>
-            <ul className="flex gap-4">
+            <ul className="gap-4 hidden md:flex">
               <li>About</li>
               <li>Projects</li>
               <li>Experience</li>
