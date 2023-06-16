@@ -43,12 +43,12 @@ export default async function Home() {
       <div className="mt-32 bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-semibold text-center">Tools & Skills</h2>
-          <div className="bg-[#121212] rounded-lg shadow-xl mt-8 p-8">
+          <div className="rounded-lg shadow-xl mt-8 p-8 bg-gradient-to-br from-primary-base to-primary-light">
             <div className="grid grid-cols-12 gap-4 md:gap-8">
               {technologies.map((tech) => (
                 <div
                   key={tech._id}
-                  className="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2 bg-white rounded-md aspect-square flex items-center justify-center"
+                  className="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2 bg-white rounded-md aspect-square flex items-center justify-center shadow"
                 >
                   <div className="flex flex-col items-center justify-center gap-2">
                     <Image
