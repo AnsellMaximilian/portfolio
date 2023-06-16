@@ -1,10 +1,11 @@
 import HeroContainer from "@/components/HeroContainer";
-import { fetchProjects } from "@/sanity/services";
+import { fetchProjects, fetchTechnologies } from "@/sanity/services";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const projects = await fetchProjects();
+  const technologies = await fetchTechnologies();
   return (
     <div>
       <HeroContainer>
@@ -36,6 +37,29 @@ export default async function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </div>
+      <div className="mt-32 bg-gray-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-semibold text-center">Tools & Skills</h2>
+          <div className="bg-[#121212] rounded-lg shadow-xl mt-8 p-8">
+            <div className="flex flex-wrap gap-4 justify-between">
+              {technologies.map((tech) => (
+                <div
+                  key={tech._id}
+                  className="flex flex-col items-center justify-center gap-2 aspect-square w-28 h-28 bg-white rounded-md"
+                >
+                  <Image
+                    src={tech.image}
+                    width={50}
+                    height={50}
+                    alt={tech.image}
+                  />
+                  <h4 className="font-semibold">{tech.name}</h4>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

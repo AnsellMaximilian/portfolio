@@ -1,3 +1,10 @@
+export type Technology = {
+  _id: string;
+  image: string;
+  name: string;
+  slug: string;
+};
+
 const technology = {
   name: "technology",
   title: "Technologies",
