@@ -48,7 +48,7 @@ export default async function Home() {
               {technologies.map((tech) => (
                 <div
                   key={tech._id}
-                  className="col-span-6 md:col-span-3 lg:col-span-2 bg-white rounded-md aspect-square flex items-center justify-center"
+                  className="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2 bg-white rounded-md aspect-square flex items-center justify-center"
                 >
                   <div className="flex flex-col items-center justify-center gap-2">
                     <Image
