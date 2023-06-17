@@ -33,6 +33,12 @@ const skillCategory = {
         },
       ],
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      initialValue: 0,
+    },
   ],
 };
 

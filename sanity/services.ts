@@ -51,7 +51,7 @@ export async function fetchSkills(): Promise<Skill[]> {
 
 export async function fetchSkillCategories(): Promise<SkillCategory[]> {
   return clientFetch(
-    groq`*[_type == "skillCategory"]{
+    groq`*[_type == "skillCategory"] | order(order){
           _id,
           name,
           skills[]->{
