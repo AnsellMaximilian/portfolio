@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 import { clientFetch } from "./config";
 import { Project } from "./schemas/project-schema";
 import { Skill } from "./schemas/skill-schema";
+import { SkillCategory } from "./schemas/skill-category-schema";
 
 export async function fetchProjects(): Promise<Project[]> {
   return clientFetch(
@@ -44,6 +45,21 @@ export async function fetchSkills(): Promise<Skill[]> {
           name,
           "slug": slug.current,
           "image": image.asset->url,
+        }`
+  );
+}
+
+export async function fetchSkillCategories(): Promise<SkillCategory[]> {
+  return clientFetch(
+    groq`*[_type == "skillCategory"]{
+          _id,
+          name,
+          skills[]->{
+            _id,
+            name,
+            "slug": slug.current,
+            "image": image.asset->url,
+          }
         }`
   );
 }

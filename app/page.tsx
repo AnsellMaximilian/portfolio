@@ -1,11 +1,17 @@
 import HeroContainer from "@/components/HeroContainer";
-import { fetchProjects, fetchSkills } from "@/sanity/services";
+import Wave from "@/components/Wave";
+import {
+  fetchProjects,
+  fetchSkillCategories,
+  fetchSkills,
+} from "@/sanity/services";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const projects = await fetchProjects();
   const technologies = await fetchSkills();
+  const skillCategories = await fetchSkillCategories();
   return (
     <div>
       <HeroContainer>
@@ -43,25 +49,39 @@ export default async function Home() {
       <div className="mt-32 bg-gray-100 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-semibold text-center">Tools & Skills</h2>
-          <div className="rounded-lg shadow-xl mt-8 p-8 bg-gradient-to-br from-primary-base to-primary-light">
-            <div className="grid grid-cols-12 gap-4 md:gap-8">
-              {technologies.map((tech) => (
+          <div className="grid grid-cols-12 gap-4 mt-8">
+            {skillCategories.map((cat, index) => {
+              const isEven = index % 2 === 0;
+              return (
                 <div
-                  key={tech._id}
-                  className="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2 bg-white rounded-md aspect-square flex items-center justify-center shadow"
+                  key={cat._id}
+                  className={`bg-gradient-to-br from-primary-base to-primary-light ${
+                    isEven ? "col-start-1 col-end-9" : "col-end-13 col-start-5"
+                  }`}
                 >
-                  <div className="flex flex-col items-center justify-center gap-2">
-                    <Image
-                      src={tech.image}
-                      width={50}
-                      height={50}
-                      alt={tech.image}
-                    />
-                    <h4 className="font-semibold">{tech.name}</h4>
-                  </div>
+                  <h3 className="text-white p-4 font-semibold">{cat.name}</h3>
+                  <ul className="grid grid-cols-12 gap-4 px-4 pb-4">
+                    {cat.skills.map((skill) => (
+                      <li key={skill._id} className="col-span-4">
+                        <div className="bg-white flex items-center gap-4 p-4">
+                          <Image
+                            src={skill.image}
+                            width={50}
+                            height={50}
+                            alt={skill.image}
+                          />
+                          <h4 className="font-semibold">{skill.name}</h4>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <Wave
+                    className="fill-gray-100"
+                    direction={isEven ? "to left" : "to right"}
+                  />
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

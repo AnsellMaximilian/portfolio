@@ -1,6 +1,7 @@
 import project from "./project-schema";
-import technology from "./skill-schema";
+import skillCategory from "./skill-category-schema";
+import skill from "./skill-schema";
 
-const schemas = [project, technology];
+const schemas = [project, skill, skillCategory];
 
 export default schemas;
