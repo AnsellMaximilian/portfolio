@@ -80,13 +80,13 @@ const project = {
       initialValue: false,
     },
     {
-      name: "technologies",
-      title: "Technologies",
+      name: "skills",
+      title: "Skills",
       type: "array",
       of: [
         {
           type: "reference",
-          to: [{ type: "technology" }],
+          to: [{ type: "skill" }],
         },
       ],
     },

@@ -1,13 +1,13 @@
-export type Technology = {
+export type Skill = {
   _id: string;
   image: string;
   name: string;
   slug: string;
 };
 
-const technology = {
-  name: "technology",
-  title: "Technologies",
+const skill = {
+  name: "skill",
+  title: "Skills",
   type: "document",
   fields: [
     {
@@ -36,4 +36,4 @@ const technology = {
   ],
 };
 
-export default technology;
+export default skill;

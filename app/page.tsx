@@ -1,11 +1,11 @@
 import HeroContainer from "@/components/HeroContainer";
-import { fetchProjects, fetchTechnologies } from "@/sanity/services";
+import { fetchProjects, fetchSkills } from "@/sanity/services";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
   const projects = await fetchProjects();
-  const technologies = await fetchTechnologies();
+  const technologies = await fetchSkills();
   return (
     <div>
       <HeroContainer>

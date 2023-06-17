@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { clientFetch } from "./config";
 import { Project } from "./schemas/project-schema";
-import { Technology } from "./schemas/technology-schema";
+import { Skill } from "./schemas/skill-schema";
 
 export async function fetchProjects(): Promise<Project[]> {
   return clientFetch(
@@ -37,9 +37,9 @@ export async function fetchProject(slug: string): Promise<Project> {
   );
 }
 
-export async function fetchTechnologies(): Promise<Technology[]> {
+export async function fetchSkills(): Promise<Skill[]> {
   return clientFetch(
-    groq`*[_type == "technology"]{
+    groq`*[_type == "skill"]{
           _id,
           name,
           "slug": slug.current,
