@@ -69,7 +69,10 @@ export default async function Home() {
                   <h3 className="text-white p-4 font-semibold">{cat.name}</h3>
                   <ul className="grid grid-cols-12 gap-4 px-4 pb-4">
                     {cat.skills.map((skill) => (
-                      <li key={skill._id} className="col-span-6 sm:col-span-4">
+                      <li
+                        key={skill._id}
+                        className="col-span-6 sm:col-span-4 xl:col-span-3"
+                      >
                         <div className="bg-white flex items-center gap-4 p-4">
                           <Image
                             src={skill.image}
