@@ -55,22 +55,27 @@ export default async function Home() {
               return (
                 <div
                   key={cat._id}
-                  className={`bg-gradient-to-br from-primary-base to-primary-light ${
-                    isEven ? "col-start-1 col-end-9" : "col-end-13 col-start-5"
+                  className={`bg-gradient-to-br from-primary-base to-primary-light col-start-1 col-end-13 ${
+                    isEven
+                      ? "md:col-start-1 md:col-end-11 lg:col-end-9"
+                      : "md:col-end-13 md:col-start-3 lg:col-start-5"
                   }`}
                 >
                   <h3 className="text-white p-4 font-semibold">{cat.name}</h3>
                   <ul className="grid grid-cols-12 gap-4 px-4 pb-4">
                     {cat.skills.map((skill) => (
-                      <li key={skill._id} className="col-span-4">
+                      <li key={skill._id} className="col-span-6 sm:col-span-4">
                         <div className="bg-white flex items-center gap-4 p-4">
                           <Image
                             src={skill.image}
                             width={50}
                             height={50}
                             alt={skill.image}
+                            className="w-8 md:w-12"
                           />
-                          <h4 className="font-semibold">{skill.name}</h4>
+                          <h4 className="font-semibold text-sm md:text-base">
+                            {skill.name}
+                          </h4>
                         </div>
                       </li>
                     ))}
