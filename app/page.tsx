@@ -1,4 +1,5 @@
 import CertificationList from "@/components/CertificationList";
+import Contacts from "@/components/Contacts";
 import HeroContainer from "@/components/HeroContainer";
 import Wave from "@/components/Wave";
 import {
@@ -104,6 +105,17 @@ export default async function Home() {
           <h2 className="text-4xl font-semibold text-center">Certifications</h2>
           <div className="mt-8">
             <CertificationList certifications={certifications} />
+          </div>
+        </div>
+      </div>
+
+      <div className="text-white bg-gradient-to-b from-[#121212] to-[#3d3d3d] py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-semibold text-center">Get in Touch</h2>
+          <div className="mt-8">
+            <div className="flex justify-center">
+              <Contacts />
+            </div>
           </div>
         </div>
       </div>
