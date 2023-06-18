@@ -73,7 +73,8 @@ export async function fetchCertifications(): Promise<Certification[]> {
           "image": image.asset->url,
           description,
           "slug": slug.current,
-          organization
+          organization,
+          url
 
         }`
   );

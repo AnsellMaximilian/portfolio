@@ -99,7 +99,7 @@ export default async function Home() {
       <div className="mt-8 py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-semibold text-center">Certifications</h2>
-          <div>
+          <div className="mt-8">
             <CertificationList certifications={certifications} />
           </div>
         </div>

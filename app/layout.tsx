@@ -3,10 +3,6 @@ import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
 
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/free-mode";
-
 const mont = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {

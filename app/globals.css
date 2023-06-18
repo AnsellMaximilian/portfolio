@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper--continuous > .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 @layer components {
   .id-gradient {
     background: linear-gradient(to bottom, red, red 50%, white 50%, white);
