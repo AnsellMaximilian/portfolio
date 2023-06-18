@@ -3,6 +3,7 @@ import { clientFetch } from "./config";
 import { Project } from "./schemas/project-schema";
 import { Skill } from "./schemas/skill-schema";
 import { SkillCategory } from "./schemas/skill-category-schema";
+import { Certification } from "./schemas/certification-schema";
 
 export async function fetchProjects(): Promise<Project[]> {
   return clientFetch(
@@ -60,6 +61,20 @@ export async function fetchSkillCategories(): Promise<SkillCategory[]> {
             "slug": slug.current,
             "image": image.asset->url,
           }
+        }`
+  );
+}
+
+export async function fetchCertifications(): Promise<Certification[]> {
+  return clientFetch(
+    groq`*[_type == "certification"]{
+          _id,
+          name,
+          "image": image.asset->url,
+          description,
+          "slug": slug.current,
+          organization
+
         }`
   );
 }

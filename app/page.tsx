@@ -1,6 +1,8 @@
+import CertificationList from "@/components/CertificationList";
 import HeroContainer from "@/components/HeroContainer";
 import Wave from "@/components/Wave";
 import {
+  fetchCertifications,
   fetchProjects,
   fetchSkillCategories,
   fetchSkills,
@@ -12,6 +14,7 @@ export default async function Home() {
   const projects = await fetchProjects();
   const technologies = await fetchSkills();
   const skillCategories = await fetchSkillCategories();
+  const certifications = await fetchCertifications();
   return (
     <div>
       <HeroContainer>
@@ -23,7 +26,9 @@ export default async function Home() {
       </HeroContainer>
       <div>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-semibold text-center">Projects</h2>
+          <h2 className="text-4xl font-semibold text-center">
+            Featured Projects
+          </h2>
           <div className="mt-8 grid grid-cols-12 gap-4 md:gap-8">
             {projects.map((project) => {
               return (
@@ -87,6 +92,15 @@ export default async function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-semibold text-center">Certifications</h2>
+          <div>
+            <CertificationList certifications={certifications} />
           </div>
         </div>
       </div>
