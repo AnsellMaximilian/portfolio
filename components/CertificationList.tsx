@@ -46,6 +46,7 @@ export default function CertificationList({
                   width={400}
                   height={300}
                   alt={cert.name}
+                  className="w-full"
                 />
               </div>
             </a>
