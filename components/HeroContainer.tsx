@@ -6,7 +6,7 @@ export default function HeroContainer({
   children: React.ReactNode;
 }) {
   return (
-    <div className="text-white bg-gradient-to-b from-[#121212] to-[#3d3d3d] pt-24">
+    <div className="text-white bg-gradient-to-b from-[#121212] to-[#3d3d3d]">
       <div className="container mx-auto px-4 py-32">{children}</div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
