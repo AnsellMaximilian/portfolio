@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .swiper--continuous > .swiper-wrapper {
   transition-timing-function: linear !important;
 }
