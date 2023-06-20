@@ -2,6 +2,7 @@ import HeroContainer from "@/components/HeroContainer";
 import { fetchProject, fetchProjects } from "@/sanity/services";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import { FaGithub as GithubLogo } from "react-icons/fa";
 
 type Props = {
   params: { slug: string };
@@ -12,8 +13,8 @@ export default async function Home({ params: { slug } }: Props) {
   return (
     <div>
       <HeroContainer>
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-6">
+        <div className="grid grid-cols-12 grid-rows-2 lg:grid-rows-1 gap-8">
+          <div className="col-span-12 lg:col-span-6 row-start-2 lg:row-start-1">
             <h1 className="text-5xl font-semibold mb-2">{project.name}</h1>
             <p className="text-xl">{project.description}</p>
             <div className="mt-4 flex gap-4">
@@ -21,7 +22,7 @@ export default async function Home({ params: { slug } }: Props) {
                 <a
                   target="_blank"
                   href={project.liveUrl}
-                  className="btn-primary align-middle"
+                  className="btn-primary flex items-center"
                 >
                   View Live
                 </a>
@@ -30,14 +31,24 @@ export default async function Home({ params: { slug } }: Props) {
                 <a
                   target="_blank"
                   href={project.articleUrl}
-                  className="btn-primary--outline"
+                  className="btn-primary--outline flex items-center"
                 >
                   <span>Visit Article</span>
                 </a>
               )}
+              {project.repoUrl && (
+                <a
+                  target="_blank"
+                  href={project.repoUrl}
+                  className="btn-primary--outline flex items-center gap-2"
+                >
+                  <span>View Repo</span>
+                  <GithubLogo size={20} />
+                </a>
+              )}
             </div>
           </div>
-          <div className="col-span-6">
+          <div className="col-span-12 lg:col-span-6 row-start-1">
             <Image
               src={project.image}
               alt={project.name}

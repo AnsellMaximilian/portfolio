@@ -15,6 +15,7 @@ export async function fetchProjects(): Promise<Project[]> {
           liveUrl,
           articleUrl,
           videoUrl,
+          repoUrl,
           content,
           description
         }`
@@ -30,6 +31,7 @@ export async function fetchProject(slug: string): Promise<Project> {
             "image": image.asset->url,
             liveUrl,
             articleUrl,
+            repoUrl,
             videoUrl,
             content,
             description
