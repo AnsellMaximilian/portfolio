@@ -6,7 +6,12 @@ import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { BiMenu as MenuIcon } from "react-icons/bi";
 
-export default function Header() {
+type Link = {
+  label: string;
+  href: string;
+};
+
+export default function Header({ links }: { links: Link[] }) {
   return (
     <Menu
       as="header"
@@ -19,16 +24,19 @@ export default function Header() {
             <Image src="/logo.svg" alt="Personal Logo" width={64} height={64} />
           </Link>
           <ul className="gap-4 hidden md:flex">
-            <li>
-              <a href="#projects" className="hover:text-gray-300">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#contact-section" className="hover:text-gray-300">
-                Contacts
-              </a>
-            </li>
+            {links.map((link) => (
+              <li key={link.href}>
+                {link.href.startsWith("#") ? (
+                  <a href={link.href} className="hover:text-gray-300">
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link href={link.href} className="hover:text-gray-300">
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
           <div className="md:hidden">
             <Menu.Button className="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
@@ -48,22 +56,25 @@ export default function Header() {
       >
         <Menu.Items className="absolute top-full w-full left-0 origin-top-right divide-y divide-gray-100 bg-primary-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1">
-            <Menu.Item>
-              <a
-                href="#projects"
-                className="group hover:bg-gray-200 hover:text-black transition-all duration-75 flex w-full items-center rounded-md px-2 py-2"
-              >
-                Projects
-              </a>
-            </Menu.Item>
-            <Menu.Item>
-              <a
-                href="#contact-section"
-                className="group hover:bg-gray-200 hover:text-black transition-all duration-75 flex w-full items-center rounded-md px-2 py-2"
-              >
-                Contacts
-              </a>
-            </Menu.Item>
+            {links.map((link) => (
+              <Menu.Item key={link.href}>
+                {link.href.startsWith("#") ? (
+                  <a
+                    href={link.href}
+                    className="group hover:bg-gray-200 hover:text-black transition-all duration-75 flex w-full items-center rounded-md px-2 py-2"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="group hover:bg-gray-200 hover:text-black transition-all duration-75 flex w-full items-center rounded-md px-2 py-2"
+                  >
+                    {link.label}
+                  </Link>
+                )}
+              </Menu.Item>
+            ))}
           </div>
         </Menu.Items>
       </Transition>
