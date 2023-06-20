@@ -50,11 +50,35 @@ export default async function Home({ params: { slug } }: Props) {
       </HeroContainer>
       <div>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-semibold text-center">
+          <h2 className="text-4xl font-bold text-center">
             About {project.name}
           </h2>
           <div className="mt-8 text-xl text-justify">
-            <PortableText value={project.content} />
+            <PortableText
+              value={project.content}
+              components={{
+                block: {
+                  h3: ({ children }) => (
+                    <h3 className="text-3xl mb-4 font-bold">{children}</h3>
+                  ),
+                  normal: ({ children }) => (
+                    <p className="text-xl mb-4">{children}</p>
+                  ),
+                },
+                list: {
+                  number: ({ children }) => (
+                    <ol className="text-xl mb-4 list-decimal list-outside pl-8 space-y-4">
+                      {children}
+                    </ol>
+                  ),
+                  bullet: ({ children }) => (
+                    <ul className="text-xl mb-4 list-disc list-outside pl-8 space-y-4">
+                      {children}
+                    </ul>
+                  ),
+                },
+              }}
+            />
           </div>
         </div>
       </div>
