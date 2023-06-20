@@ -13,8 +13,8 @@ export default async function Home({ params: { slug } }: Props) {
   return (
     <div>
       <HeroContainer>
-        <div className="grid grid-cols-12 grid-rows-2 lg:grid-rows-1 gap-8">
-          <div className="col-span-12 lg:col-span-6 row-start-2 lg:row-start-1">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="w-full lg:w-1/2 order-2 lg:order-1">
             <h1 className="text-5xl font-semibold mb-2">{project.name}</h1>
             <p className="text-xl">{project.description}</p>
             <div className="mt-4 flex gap-4">
@@ -48,7 +48,7 @@ export default async function Home({ params: { slug } }: Props) {
               )}
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-6 row-start-1">
+          <div className="w-full lg:w-1/2 order-1 lg:order-2">
             <Image
               src={project.image}
               alt={project.name}
