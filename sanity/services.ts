@@ -34,7 +34,16 @@ export async function fetchProject(slug: string): Promise<Project> {
             repoUrl,
             videoUrl,
             content,
-            description
+            description,
+            skills[]->{
+              name,
+              "image": image.asset->url,
+            },
+            screenshots[]{
+              _key,
+              description,
+              "url": asset->url
+            }
 
           }[0]`,
     { slug }

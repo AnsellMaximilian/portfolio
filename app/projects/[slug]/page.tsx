@@ -1,4 +1,5 @@
 import HeroContainer from "@/components/HeroContainer";
+import ScreenshotList from "@/components/ScreenshotList";
 import { fetchProject, fetchProjects } from "@/sanity/services";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
@@ -60,7 +61,7 @@ export default async function Home({ params: { slug } }: Props) {
         </div>
       </HeroContainer>
       <div>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 xl:max-w-5xl">
           <h2 className="text-4xl font-bold text-center">
             About {project.name}
           </h2>
@@ -93,6 +94,50 @@ export default async function Home({ params: { slug } }: Props) {
           </div>
         </div>
       </div>
+
+      <div className="mt-32 bg-gray-100 bg-[url('/bg.png')] bg-repeat">
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-4xl font-bold text-center">
+            Tools & Technologies Used
+          </h2>
+          <ul className="bg-gradient-to-b from-primary-base to-primary-light mt-8 grid grid-cols-12 gap-4 py-8 px-4">
+            {project.skills.map((skill) => (
+              <li
+                key={skill._id}
+                className="col-span-6 sm:col-span-4 xl:col-span-3"
+              >
+                <div className="bg-white flex items-center gap-4 p-4">
+                  <Image
+                    src={skill.image}
+                    width={50}
+                    height={50}
+                    alt={skill.image}
+                    className="w-8 md:w-10"
+                  />
+                  <h4 className="font-semibold text-sm md:text-base">
+                    {skill.name}
+                  </h4>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {project.screenshots && (
+        <div className="mt-8 py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center">Screenshots</h2>
+            <div className="mt-8">
+              {project.screenshots.length > 0 ? (
+                <ScreenshotList screenshots={project.screenshots} />
+              ) : (
+                <p className="font-medium text-xl">No screenshots available.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

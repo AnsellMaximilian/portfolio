@@ -1,4 +1,11 @@
 import { PortableTextBlock } from "sanity";
+import { Skill } from "./skill-schema";
+
+export type ProjectScreenshot = {
+  description: string;
+  url: string;
+  _key: string;
+};
 
 export type Project = {
   _id: string;
@@ -11,6 +18,8 @@ export type Project = {
   slug: string;
   content: PortableTextBlock[];
   description: string;
+  skills: Skill[];
+  screenshots?: ProjectScreenshot[];
 };
 
 const project = {
@@ -67,6 +76,7 @@ const project = {
       title: "Content",
       type: "array",
       of: [{ type: "block" }],
+      initialValue: [],
     },
     {
       name: "description",
@@ -83,10 +93,32 @@ const project = {
       name: "skills",
       title: "Skills",
       type: "array",
+      initialValue: [],
       of: [
         {
           type: "reference",
           to: [{ type: "skill" }],
+        },
+      ],
+    },
+    {
+      name: "screenshots",
+      title: "Screenshots",
+      type: "array",
+      initialValue: [],
+      of: [
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "description",
+              title: "Description",
+              type: "string",
+            },
+          ],
         },
       ],
     },

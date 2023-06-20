@@ -146,13 +146,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <footer className="bg-gradient-to-b to-primary-base from-primary-light text-gray-300 p-4">
-        <div className="flex justify-center gap-8 container mx-auto items-center text-sm">
-          <span>Ansell Maximilian &middot; {new Date().getFullYear()}</span>
-          <Image src="/logo.svg" alt="Personal Logo" width={40} height={40} />
-          <span>All rights reserved.</span>
-        </div>
-      </footer>
     </div>
   );
 }
