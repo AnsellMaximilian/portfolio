@@ -133,7 +133,10 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="text-white bg-primary-base py-24" id="contact-section">
+      <div
+        className="text-white bg-primary-base py-24 bg-[url('/bg-dark.png')] bg-repeat"
+        id="contact-section"
+      >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center">Get in Touch</h2>
           <div className="mt-8">
