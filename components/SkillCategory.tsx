@@ -24,7 +24,7 @@ export default function SkillCategory({
   return (
     <div
       ref={ref}
-      className={`bg-gradient-to-b from-primary-base to-primary-light col-start-1 col-end-13 shadow-lg pb-10 md:pb-16 mt-0 md:-mt-16 transition-all ${
+      className={`max-w-full bg-gradient-to-b from-primary-base to-primary-light col-start-1 col-end-13 shadow-lg pb-10 md:pb-16 mt-0 md:-mt-16 transition-all ${
         isEven
           ? "md:col-start-1 md:col-end-11 lg:col-end-9"
           : "md:col-end-13 md:col-start-3 lg:col-start-5"
@@ -37,21 +37,21 @@ export default function SkillCategory({
       }`}
     >
       <h3 className="text-white p-4 font-semibold">{skillCategory.name}</h3>
-      <ul className="grid grid-cols-12 gap-4 px-4 pb-4">
+      <ul className="grid grid-cols-12 gap-4 px-4 pb-4 max-w-full">
         {skillCategory.skills.map((skill) => (
           <li
             key={skill._id}
-            className="col-span-6 sm:col-span-4 xl:col-span-3"
+            className="col-span-6 sm:col-span-4 xl:col-span-3 max-w-full"
           >
-            <div className="bg-white flex items-center gap-4 p-4">
+            <div className="bg-white flex items-center gap-4 p-2 xs:p-4 h-full max-w-full flex-wrap">
               <Image
                 src={skill.image}
                 width={50}
                 height={50}
                 alt={skill.image}
-                className="w-8 md:w-10"
+                className="w-6 sm:w-8 md:w-10"
               />
-              <h4 className="font-semibold text-sm md:text-base">
+              <h4 className="font-semibold text-xs sm:text-sm md:text-base">
                 {skill.name}
               </h4>
             </div>

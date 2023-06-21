@@ -20,11 +20,14 @@ export default function CertificationList({
     <Swiper
       loop
       spaceBetween={50}
-      slidesPerView={2}
+      slidesPerView={1}
       autoplay={{ delay: 1000, disableOnInteraction: false }}
       modules={[Autoplay]}
       centeredSlides
       breakpoints={{
+        640: {
+          slidesPerView: 2,
+        },
         1024: {
           slidesPerView: 3,
         },
