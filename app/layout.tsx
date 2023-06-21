@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mont.className}>
+      <body className={`${mont.className} overflow-x-hidden`}>
         {children}
         <footer className="bg-gradient-to-b to-primary-base from-primary-light text-gray-300 p-4">
           <div className="flex justify-center gap-8 container mx-auto items-center text-sm">
