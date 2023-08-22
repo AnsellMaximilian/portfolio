@@ -24,17 +24,18 @@ export default function Hero() {
       </div>
       <div>
         <p className="mb-4">
-          I am a developer based in Indonesia. I graduated with a
-          Bachelor&apos;s in Information Systems and taught myself how to code,
-          especially using web technologies. I love using my skills to solve
-          problems.
+          A computer science graduate majoring in information systems. I&apos;ve
+          self-taught to code both front end and backend. My strength lies in
+          crafting front-end solutions, which I&apos;ve applied professionally.
+          I focus on creating user-centered interfaces and enjoy using React and
+          Tailwind for the job.
         </p>
         <div className="flex gap-4 items-center">
           <a
             href="#contact-section"
             className="bg-white text-black hover:bg-gray-300 border-2 border-white px-4 py-2 font-bold hover:border-gray-300 transition-all duration-100"
           >
-            Say Hello
+            Contact Me
           </a>
           <a
             href="#projects"
