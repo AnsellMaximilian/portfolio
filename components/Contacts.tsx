@@ -4,9 +4,12 @@ import {
   FaLinkedin as Linkedin,
   FaTwitter as Twitter,
   FaDev as DevTo,
+  FaFilePdf as Pdf,
 } from "react-icons/fa";
 import { SiHashnode as Hashnode } from "react-icons/si";
 import { FiExternalLink as ExternalLink } from "react-icons/fi";
+import { MdEmail as MailIcon } from "react-icons/md";
+import Link from "next/link";
 
 export default function Contacts() {
   return (
@@ -76,6 +79,24 @@ export default function Contacts() {
       </div>
       <div className="col-span-2 bg-neutral-600 h-10"></div>
       <div className="col-span-2 bg-neutral-600 h-10"></div>
+      <div className="col-span-2 bg-white h-10 hover:bg-gray-200">
+        <Link
+          className="flex gap-4 items-center w-full h-full p-2"
+          href="/Ansell_Maximilian_Resume.pdf"
+        >
+          <Pdf size={24} />
+          <span className="text-sm md:text-base">Resume</span>
+          <ExternalLink size={10} className="ml-auto mb-auto" />
+        </Link>
+      </div>
+      <div className="col-span-4 bg-white h-10 hover:bg-gray-200">
+        <div className="flex gap-4 items-center w-full h-full p-2">
+          <MailIcon size={24} />
+          <span className="text-sm md:text-base">
+            ansellmaximilian@gmail.com
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

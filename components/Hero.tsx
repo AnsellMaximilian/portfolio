@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -30,19 +31,25 @@ export default function Hero() {
           I focus on creating user-centered interfaces and enjoy using React and
           Tailwind for the job.
         </p>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center flex-wrap">
           <a
             href="#contact-section"
             className="bg-white text-black hover:bg-gray-300 border-2 border-white px-4 py-2 font-bold hover:border-gray-300 transition-all duration-100"
           >
             Contact Me
           </a>
-          <a
+          <Link
+            href="/Ansell_Maximilian_Resume.pdf"
+            className="hover:bg-gray-300 border-2 border-white px-4 py-2 font-bold hover:border-gray-300 transition-all duration-100 hover:text-black"
+          >
+            Resume
+          </Link>
+          {/* <a
             href="#projects"
             className="hover:bg-gray-300 border-2 border-white px-4 py-2 font-bold hover:border-gray-300 transition-all duration-100 hover:text-black"
           >
             Projects
-          </a>
+          </a> */}
         </div>
       </div>
     </motion.div>
