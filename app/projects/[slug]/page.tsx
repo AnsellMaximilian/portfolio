@@ -78,9 +78,32 @@ export default async function Home({ params: { slug } }: Props) {
               <PortableText
                 value={project.content}
                 components={{
+                  marks: {
+                    link: ({ children, value }) => (
+                      <a
+                        href={value.href}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        {children}
+                      </a>
+                    ),
+                  },
+
                   block: {
-                    h3: ({ children }) => (
+                    blockquote: ({ children }) => (
+                      <blockquote className="bg-slate-100 flex">
+                        <div className="bg-slate-200 w-4"></div>
+                        <div className="px-2 py-6"> {children}</div>
+                      </blockquote>
+                    ),
+                    h1: ({ children }) => (
+                      <h3 className="text-4xl mb-4 font-bold">{children}</h3>
+                    ),
+                    h2: ({ children }) => (
                       <h3 className="text-3xl mb-4 font-bold">{children}</h3>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-2xl mb-4 font-bold">{children}</h3>
                     ),
                     normal: ({ children }) => (
                       <p className="text-xl mb-4">{children}</p>
