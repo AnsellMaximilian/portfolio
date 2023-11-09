@@ -15,15 +15,16 @@ import { twMerge as cn } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Social from "./Social";
+import SectionHeader from "./SectionHeader";
 
 export default function Socials() {
   return (
     <div className="bg-[#121212] text-white py-16">
       <div className="container p-4 max-w-xl mx-auto">
-        <h2 className="text-4xl font-bold text-center">Contact Me</h2>
-        <p className=" mb-8 text-2xl font-light text-center">
-          Blogs, Socials, and Portfolios
-        </p>
+        <SectionHeader
+          title="Contact Me"
+          subtitle="Blogs, Socials, and Portfolios"
+        />
         <div className="grid grid-cols-12 gap-4">
           <Social
             href="https://ansellmax.hashnode.dev/"

@@ -3,6 +3,7 @@ import Contacts from "@/components/Contacts";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HeroContainer from "@/components/HeroContainer";
+import SectionHeader from "@/components/SectionHeader";
 import SkillsList from "@/components/SkillsList";
 import Socials from "@/components/Socials";
 import {
@@ -33,9 +34,10 @@ export default async function Home() {
         </HeroContainer>
         <div>
           <div className="container mx-auto px-4" id="projects">
-            <h2 className="text-4xl font-bold text-center">
-              Featured Projects
-            </h2>
+            <SectionHeader
+              title="Featured Projects"
+              subtitle="Some of my projects"
+            />
             <div className="mt-8 grid grid-cols-12 gap-4 md:gap-8">
               {projects.map((project) => {
                 return (
@@ -60,7 +62,7 @@ export default async function Home() {
         </div>
         <div className="mt-32 bg-gray-100 py-16 bg-[url('/bg.png')] bg-repeat">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center">Tools & Skills</h2>
+            <SectionHeader title="Tools & Skills" subtitle="Tools and skills" />
             <div className="mt-16 md:mt-32">
               <SkillsList skillCategories={skillCategories} />
             </div>
