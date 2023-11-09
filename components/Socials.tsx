@@ -58,7 +58,7 @@ export default function Socials() {
               <Linkedin className="text-white text-lg md:text-2xl group-hover:text-[#0A66C2] transition-all duration-200" />
             }
             text="LinkedIn"
-            className="col-span-6 row-span-2"
+            className="col-span-6"
           />
           <Social
             side="RIGHT"
@@ -67,7 +67,7 @@ export default function Socials() {
               <Github className="text-white text-lg md:text-2xl group-hover:text-black transition-all duration-200" />
             }
             text="Github"
-            className="col-span-6 row-span-2"
+            className="col-span-6"
           />
           <Social
             href="https://twitter.com/AnsellMax"
@@ -75,6 +75,22 @@ export default function Socials() {
               <Twitter className="text-white text-lg md:text-2xl group-hover:text-[#1D9BF0] transition-all duration-200" />
             }
             text="Twitter"
+            className="col-span-6 md:col-span-4"
+          />
+          <Social
+            href="/Ansell_Maximilian_Resume.pdf"
+            icon={
+              <Pdf className="text-white text-lg md:text-2xl group-hover:text-[#1D9BF0] transition-all duration-200" />
+            }
+            text="Resume"
+            className="col-span-6 md:col-span-8"
+          />
+          <Social
+            href="mailto:ansellmaximilian@gmail.com"
+            icon={
+              <MailIcon className="text-white text-lg md:text-2xl group-hover:text-black transition-all duration-200" />
+            }
+            text="ansellmaximilian@gmail.com"
             className="col-span-12"
           />
         </div>
