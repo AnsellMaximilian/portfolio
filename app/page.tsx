@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HeroContainer from "@/components/HeroContainer";
 import SkillsList from "@/components/SkillsList";
+import Socials from "@/components/Socials";
 import {
   fetchCertifications,
   fetchProjects,
@@ -64,6 +65,10 @@ export default async function Home() {
               <SkillsList skillCategories={skillCategories} />
             </div>
           </div>
+        </div>
+
+        <div>
+          <Socials />
         </div>
 
         <div className="mt-8 py-16">
