@@ -80,7 +80,7 @@ export default function Socials() {
           <Social
             href="/Ansell_Maximilian_Resume.pdf"
             icon={
-              <Pdf className="text-white text-lg md:text-2xl group-hover:text-[#1D9BF0] transition-all duration-200" />
+              <Pdf className="text-white text-lg md:text-2xl group-hover:text-[#CB0606] transition-all duration-200" />
             }
             text="Resume"
             className="col-span-6 md:col-span-8"
