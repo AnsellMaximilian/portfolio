@@ -1,5 +1,6 @@
 import CertificationList from "@/components/CertificationList";
 import Contacts from "@/components/Contacts";
+import HackathonList from "@/components/HackathonList";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HeroContainer from "@/components/HeroContainer";
@@ -14,10 +15,10 @@ import {
 } from "@/sanity/services";
 import Image from "next/image";
 import Link from "next/link";
+import { AiTwotoneTrophy as Trophy } from "react-icons/ai";
 
 export default async function Home() {
   const projects = await fetchProjects();
-  const technologies = await fetchSkills();
   const skillCategories = await fetchSkillCategories();
   const certifications = await fetchCertifications();
   return (
@@ -62,7 +63,10 @@ export default async function Home() {
         </div>
         <div className="mt-32 bg-gray-100 py-16 bg-[url('/bg.png')] bg-repeat">
           <div className="container mx-auto px-4">
-            <SectionHeader title="Tools & Skills" subtitle="Tools and skills" />
+            <SectionHeader
+              title="Tools & Skills"
+              subtitle="Technologies I've Used, Skills I Possess"
+            />
             <div className="mt-16 md:mt-32">
               <SkillsList skillCategories={skillCategories} />
             </div>
@@ -73,11 +77,28 @@ export default async function Home() {
           <Socials />
         </div>
 
-        <div className="mt-8 py-16">
+        {/* <div className="mt-8 py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center">Certifications</h2>
             <div className="mt-8">
               <CertificationList certifications={certifications} />
+            </div>
+          </div>
+        </div> */}
+
+        <div className="mt-8 py-16">
+          <div className="container mx-auto px-4">
+            <SectionHeader
+              title="Hackathons"
+              subtitle="Some hackathons I've won"
+            />
+            <div className="mt-8">
+              <HackathonList />
+            </div>
+            <div className="mt-4 text-center">
+              <button className="font-semibold hover:text-slate-600">
+                View More
+              </button>
             </div>
           </div>
         </div>

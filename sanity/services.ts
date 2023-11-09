@@ -4,6 +4,7 @@ import { Project } from "./schemas/project-schema";
 import { Skill } from "./schemas/skill-schema";
 import { SkillCategory } from "./schemas/skill-category-schema";
 import { Certification } from "./schemas/certification-schema";
+import { Hackathon } from "./schemas/hackathon-schema";
 
 export async function fetchProjects(): Promise<Project[]> {
   return clientFetch(
@@ -87,6 +88,26 @@ export async function fetchCertifications(): Promise<Certification[]> {
           organization,
           url
 
+        }`
+  );
+}
+
+export async function fetchHackathons(): Promise<Hackathon[]> {
+  return clientFetch(
+    groq`*[_type == "hackathon"]{
+          _id,
+          name,
+          "slug": slug.current,
+          announcementUrl,
+          project->{
+            _id,
+            name,
+            "slug": slug.current,
+          },
+          description,
+          placement,
+          winner,
+          featured
         }`
   );
 }
