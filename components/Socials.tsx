@@ -32,7 +32,7 @@ export default function Socials() {
               <Hashnode className="text-white text-lg md:text-2xl group-hover:text-[#2962FF] transition-all duration-200" />
             }
             text="Hashnode"
-            className="col-span-8 row-span-2"
+            className="col-span-6 md:col-span-8 row-span-2"
           />
           <Social
             side="RIGHT"
@@ -41,7 +41,7 @@ export default function Socials() {
               <DevTo className="text-white text-lg md:text-2xl group-hover:text-black transition-all duration-200" />
             }
             text="Dev.to"
-            className="col-span-4"
+            className="col-span-6 md:col-span-4"
           />
           <Social
             side="RIGHT"
@@ -50,7 +50,7 @@ export default function Socials() {
               <Devpost className="text-white text-lg md:text-2xl group-hover:text-[#003E54] transition-all duration-200" />
             }
             text="Devpost"
-            className="col-span-4"
+            className="col-span-6 md:col-span-4"
           />
           <Social
             href="https://www.linkedin.com/in/ansell-maximilian/"
