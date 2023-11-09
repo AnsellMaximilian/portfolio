@@ -18,16 +18,14 @@ const pathVariants: Variants = {
   },
 };
 
-export default function AnimatedLogo() {
+export default function AnimatedLogo({ className }: { className?: string }) {
   return (
     <svg
-      width="122.16553mm"
-      height="69.973457mm"
       viewBox="0 0 122.16553 69.973457"
       version="1.1"
-      id="svg5"
       xmlSpace="preserve"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <defs id="defs2" />
       <g id="layer1" transform="translate(-14.444263,-100.31199)">

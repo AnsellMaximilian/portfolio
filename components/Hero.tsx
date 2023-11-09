@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsFillTelephoneFill, BsTelephoneFill } from "react-icons/bs";
+import AnimatedLogo from "./AnimatedLogo";
 
 export default function Hero() {
   return (
@@ -11,18 +12,24 @@ export default function Hero() {
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1 }}
-      className="flex gap-12 md:gap-8 items-center flex-col lg:flex-row"
+      className="flex gap-12 items-center flex-col"
     >
-      <div className="whitespace-nowrap w-full">
-        <p className="text-xl lg:text-3xl xl:text-4xl font-semibold text-gray-300">
-          Halo, nama saya
-        </p>
-        <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-2 md:mb-4">
-          Ansell Maximilian
-        </h1>
-        <p className="text-xl lg:text-3xl xl:text-4xl">
-          Web and Systems Developer
-        </p>
+      <div className="flex w-full items-center gap-8 flex-col md:flex-row">
+        <div>
+          <AnimatedLogo className="h-24 md:h-32" />
+        </div>
+
+        <div className="whitespace-nowrap w-full">
+          <p className="text-xl lg:text-3xl xl:text-4xl font-semibold text-gray-300">
+            Halo, nama saya
+          </p>
+          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-2 md:mb-4">
+            Ansell Maximilian
+          </h1>
+          <p className="text-xl lg:text-3xl xl:text-4xl">
+            Web and Systems Developer
+          </p>
+        </div>
       </div>
       <div>
         <p className="mb-4">
