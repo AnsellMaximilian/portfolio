@@ -50,6 +50,7 @@ export default function Hero() {
           </a>
           <Link
             href="/Ansell_Maximilian_Resume.pdf"
+            target="_blank"
             className="hover:bg-gray-300 border-2 border-white px-4 py-2 font-bold hover:border-gray-300 transition-all duration-100 hover:text-black"
           >
             Resume

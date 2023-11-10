@@ -83,6 +83,7 @@ export default function Contacts() {
         <Link
           className="flex gap-4 items-center w-full h-full p-2"
           href="/Ansell_Maximilian_Resume.pdf"
+          target="_blank"
         >
           <Pdf size={24} />
           <span className="text-sm md:text-base">Resume</span>
