@@ -45,7 +45,9 @@ const Social = ({
         inView || hasAnimated
           ? `translate-x-0 duration-1000 opacity-100`
           : `${
-              side === "LEFT" ? "-translate-x-64" : "translate-x-64"
+              side === "LEFT"
+                ? "-translate-x-32 md:-translate-x-64"
+                : "translate-x-32 md:translate-x-64"
             } duration-500 opacity-0`,
         className,
         transitionEnd ? "duration-100" : ""
