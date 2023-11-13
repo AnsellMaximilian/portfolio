@@ -27,7 +27,7 @@ export default async function Home({ params: { slug } }: Props) {
             <div className="w-full lg:w-1/2 order-2 lg:order-1">
               <h1 className="text-5xl font-semibold mb-2">{project.name}</h1>
               <p className="text-xl">{project.description}</p>
-              <div className="mt-4 flex gap-4">
+              <div className="mt-4 flex gap-4 flex-wrap">
                 {project.liveUrl && (
                   <a
                     target="_blank"
