@@ -43,6 +43,7 @@ export default async function Home() {
               {projects.map((project) => {
                 return (
                   <Link
+                    scroll={false}
                     href={`/projects/${project.slug}`}
                     key={project._id}
                     className="col-span-12 lg:col-span-6 xl:col-span-4 overflow-hidden rounded shadow-md hover:scale-105 transition-all duration-100 max-w-full"

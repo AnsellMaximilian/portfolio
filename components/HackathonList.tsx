@@ -25,6 +25,7 @@ export default async function HackathonList() {
             <p className="mt-4">
               <span className="font-bold">Project:</span>{" "}
               <Link
+                scroll={false}
                 href={`/projects/${hack.project.slug}`}
                 className="hover:underline"
               >
@@ -34,6 +35,7 @@ export default async function HackathonList() {
           </div>
           <div className="flex gap-2 justify-end mt-auto">
             <Link
+              scroll={false}
               href={`/projects/${hack.project.slug}`}
               className="border-[#121212] border px-4 py-2 hover:bg-zinc-100"
             >
