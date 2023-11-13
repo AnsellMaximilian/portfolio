@@ -74,7 +74,7 @@ export default async function Home({ params: { slug } }: Props) {
             <h2 className="text-4xl font-bold text-center">
               About {project.name}
             </h2>
-            <div className="mt-8 text-xl text-justify">
+            <div className="mt-8 text-xl">
               <PortableText
                 value={project.content}
                 components={{
