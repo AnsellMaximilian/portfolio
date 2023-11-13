@@ -20,7 +20,7 @@ export default function Header({ links }: { links: Link[] }) {
     >
       <nav className="h-full">
         <div className="flex items-center justify-between h-full">
-          <Link href="/" scroll={false}>
+          <Link href="/">
             <Image src="/logo.svg" alt="Personal Logo" width={64} height={64} />
           </Link>
           <ul className="gap-4 hidden md:flex">
@@ -31,11 +31,7 @@ export default function Header({ links }: { links: Link[] }) {
                     {link.label}
                   </a>
                 ) : (
-                  <Link
-                    scroll={false}
-                    href={link.href}
-                    className="hover:text-gray-300"
-                  >
+                  <Link href={link.href} className="hover:text-gray-300">
                     {link.label}
                   </Link>
                 )}
