@@ -7,12 +7,7 @@ import HeroContainer from "@/components/HeroContainer";
 import SectionHeader from "@/components/SectionHeader";
 import SkillsList from "@/components/SkillsList";
 import Socials from "@/components/Socials";
-import {
-  fetchCertifications,
-  fetchProjects,
-  fetchSkillCategories,
-  fetchSkills,
-} from "@/sanity/services";
+import { fetchProjects, fetchSkillCategories } from "@/sanity/services";
 import Image from "next/image";
 import Link from "next/link";
 import { AiTwotoneTrophy as Trophy } from "react-icons/ai";
@@ -20,7 +15,6 @@ import { AiTwotoneTrophy as Trophy } from "react-icons/ai";
 export default async function Home() {
   const projects = await fetchProjects();
   const skillCategories = await fetchSkillCategories();
-  const certifications = await fetchCertifications();
   return (
     <>
       <Header
