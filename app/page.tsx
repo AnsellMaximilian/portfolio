@@ -95,11 +95,11 @@ export default async function Home() {
             <div className="mt-8">
               <HackathonList />
             </div>
-            <div className="mt-4 text-center">
+            {/* <div className="mt-4 text-center">
               <button className="font-semibold hover:text-slate-600">
                 View More
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
