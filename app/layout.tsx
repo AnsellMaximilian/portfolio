@@ -9,6 +9,7 @@ const mont = Montserrat({ subsets: ["latin"] });
 export const metadata = {
   title: "Ansell Maximilian",
   description: "Ansell Maximilian's Portfolio Website",
+  "google-site-verification": "X9rdxDeJ0FzhDd5KXArRe5BqHhrGElTiNQhKAPeO7H0",
 };
 
 export default function RootLayout({
