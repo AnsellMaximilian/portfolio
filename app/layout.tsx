@@ -3,13 +3,16 @@ import "./globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
 import Header from "@/components/Header";
+import { Metadata } from "next";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Ansell Maximilian",
   description: "Ansell Maximilian's Portfolio Website",
-  "google-site-verification": "X9rdxDeJ0FzhDd5KXArRe5BqHhrGElTiNQhKAPeO7H0",
+  verification: {
+    google: "X9rdxDeJ0FzhDd5KXArRe5BqHhrGElTiNQhKAPeO7H0",
+  },
 };
 
 export default function RootLayout({
