@@ -47,7 +47,7 @@ export default async function Home() {
                         <h3 className="font-semibold text-xl">
                           {project.name}
                         </h3>
-                        <p>{project.description}</p>
+                        <p>{project.shortDescription}</p>
                       </div>
                     </div>
                     <Image
