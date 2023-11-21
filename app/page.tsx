@@ -39,9 +39,17 @@ export default async function Home() {
                   <Link
                     href={`/projects/${project.slug}`}
                     key={project._id}
-                    className="col-span-12 lg:col-span-6 xl:col-span-4 overflow-hidden rounded shadow-md hover:scale-105 transition-all duration-100 max-w-full"
+                    className="col-span-12 lg:col-span-6 xl:col-span-4 overflow-hidden rounded shadow-md hover:scale-105 transition-all duration-100 max-w-full group relative"
                   >
                     {/* <h3>{project.name}</h3> */}
+                    <div className="flex items-center justify-center opacity-0 group-hover:opacity-100 bg-[rgba(0,0,0,0.8)] text-white absolute inset-0 transition-all duration-200">
+                      <div className="p-4 text-center">
+                        <h3 className="font-semibold text-xl">
+                          {project.name}
+                        </h3>
+                        <p>{project.description}</p>
+                      </div>
+                    </div>
                     <Image
                       src={project.image}
                       alt={project.name}
