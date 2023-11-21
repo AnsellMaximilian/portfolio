@@ -18,7 +18,8 @@ export async function fetchProjects(): Promise<Project[]> {
           videoUrl,
           repoUrl,
           content,
-          description
+          description,
+          shortDescription
         }`
   );
 }
@@ -36,6 +37,7 @@ export async function fetchProject(slug: string): Promise<Project> {
             videoUrl,
             content,
             description,
+            shortDescription,
             skills[]->{
               name,
               "image": image.asset->url,

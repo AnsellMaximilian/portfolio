@@ -18,6 +18,7 @@ export type Project = {
   slug: string;
   content: PortableTextBlock[];
   description: string;
+  shortDescription: string;
   skills: Skill[];
   screenshots?: ProjectScreenshot[];
 };
@@ -81,6 +82,11 @@ const project = {
     {
       name: "description",
       title: "Description",
+      type: "string",
+    },
+    {
+      name: "shortDescription",
+      title: "Short Description",
       type: "string",
     },
     {
