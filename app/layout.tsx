@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Ansell Maximilian",
   description: "Ansell Maximilian's Portfolio Website",
   verification: {
-    google: "X9rdxDeJ0FzhDd5KXArRe5BqHhrGElTiNQhKAPeO7H0",
+    google: "dxQ-SCN2hJTZ2hBsFiLR7uToQOViN8CE0LKTCRu9gag",
   },
 };
 
